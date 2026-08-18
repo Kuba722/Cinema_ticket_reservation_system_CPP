@@ -1,49 +1,55 @@
-Project Description
+# Cinema Ticket Reservation System
 
-This project is a console-based cinema ticket reservation system written in C++.
-It allows users to browse available movies, select seats, and purchase tickets.
+A console-based cinema ticket reservation system written in C++.
 
-The system supports two roles:
+> **Project status:** Educational project originally developed in 2024.
+> In 2026, I revisited the project to improve the documentation and
+> organize the source code into separate header and implementation files.
+> The original application logic has been preserved.
 
-Client – can view movies and reserve seats
-Admin – can manage the movie database and system data
+## Features
 
-Data is stored using files, simulating a simple database.
+### Client
+- User registration and login
+- Browse available movies
+- View seating layout
+- Select a seat
+- Purchase a ticket
 
-Features
-User registration and login system
-Role-based access (Admin / Client)
-Movie management (add, delete, display)
-Seat reservation system (2D matrix representation)
-File-based data storage (users, movies, seats)
-Input validation and basic error handling
+### Admin
+- Administrator registration and login
+- Add and delete movies
+- Display movies
+- View seating layout
+- Reset seats
 
-How It Works
-Client
-Registers or logs into the system
-Views available movies
-Selects a movie
-Chooses a seat from the available seating layout
-Confirms ticket reservation
+## Technologies
 
-Admin
-Logs into the system
-Can:
-add new movies
-delete existing movies
-view movie list
-reset seating for a selected movie
+- C++
+- Object-Oriented Programming (OOP)
+- Inheritance and polymorphism
+- STL (`std::vector`)
+- File I/O
 
-System Architecture
+## Project Structure
 
-The project is based on object-oriented programming:
-
-User – base class for system users
-Client – handles ticket purchasing and seat selection
-Admin – manages movies and system data
-Movie – stores movie information
-Technologies Used
-C++
-Object-Oriented Programming (OOP)
-File I/O (data persistence)
-STL (vector)
+```text
+.
+├── include/
+│   ├── admin.h
+│   ├── client.h
+│   ├── movie.h
+│   └── user.h
+│
+├── src/
+│   ├── admin.cpp
+│   ├── client.cpp
+│   ├── movie.cpp
+│   ├── user.cpp
+│   └── main.cpp
+│
+├── Admin.txt
+├── Client.txt
+├── Movies.txt
+├── Places_1.txt
+└── Places_2.txt
