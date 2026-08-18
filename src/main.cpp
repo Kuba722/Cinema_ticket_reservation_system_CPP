@@ -1,9 +1,9 @@
 #include <iostream>
 #include<vector>
 #include<fstream>
-#include"movie.hpp"
-#include"admin.hpp"
-#include"client.hpp"
+#include "movie.h"
+#include "admin.h"
+#include "client.h"
 
 using std::cout;
 using std::cin;
