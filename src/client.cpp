@@ -42,7 +42,7 @@ void jl::Client::login (bool &p2){
     cout<<"Enter your password: ";
     cin>>m_password;
     l=m_name + " : " + m_password;
-    std::ifstream file("Client.txt");
+    std::ifstream file("../Client.txt");
 
     if(!file.is_open()){
         cout<<"Error"<<endl;
@@ -85,7 +85,7 @@ void jl::Client::loadS(std::vector<std::vector<int>>&matrix,std::string f){
 void jl::Client::showMovies(){
     std::string line;
     int i=1;
-    std::ifstream file("Movies.txt");
+    std::ifstream file("../Movies.txt");
     if(!file.is_open()){
         cout<<"Error"<<endl;
         return;
@@ -106,8 +106,8 @@ void jl::Client::showMovies(){
 }    
     
 void jl::Client::showSeat(int c,std::vector<std::vector<int>>&matrix1,std::vector<std::vector<int>>&matrix2){
-    loadS(matrix1,"Places_1.txt");
-    loadS(matrix2,"Places_2.txt");
+    loadS(matrix1,"../Places_1.txt");
+    loadS(matrix2,"../Places_2.txt");
     if (c==1){
         cout<<"--Screen--"<<endl;
         for(int i=0;i<5;i++){
@@ -137,7 +137,7 @@ void jl::Client::registration(){
     cout<<"Enter password: ";
     cin>>m_password;
     l=m_name+" : "+m_password;
-    std::ifstream file("Client.txt");
+    std::ifstream file("../Client.txt");
     if(!file.is_open()){
         cout<<"Error"<<endl;
     }
@@ -151,7 +151,7 @@ void jl::Client::registration(){
     if(found){
         cout<<endl<<"It already exists "<<endl;
     }else{
-    std::ofstream file("Client.txt",std::ios::app);
+    std::ofstream file("../Client.txt",std::ios::app);
     if(!file.is_open()){
         cout<<"Error"<<endl;
     }else{
@@ -164,7 +164,7 @@ void jl::Client::registration(){
  
     
 void jl::Client::loadM(std::vector<Movie>&movies){
-    std::ifstream file("Movies.txt");
+    std::ifstream file("../Movies.txt");
     if (!file.is_open()) {
         std::cout << "Error" << std::endl;
         return;
@@ -235,10 +235,10 @@ void jl::Client::buyTicket(std::vector<Movie>movies,int &row,int &column,std::ve
             movies[i].getTitle();
                     if(movies[i].getRoom()==1){
                         showSeat(1,matrix1,matrix2);
-                        pickSeat(matrix1,"Places_1.txt",row,column);
+                        pickSeat(matrix1,"../Places_1.txt",row,column);
                     }else if (movies[i].getRoom()==2){
                         showSeat(2,matrix1,matrix2);
-                        pickSeat(matrix2,"Places_2.txt",row,column);
+                        pickSeat(matrix2,"../Places_2.txt",row,column);
                     }
                     if(m_check){
                         cout<<endl<<"#### Cinema ticket ####"<<endl;
