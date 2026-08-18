@@ -43,7 +43,7 @@ void jl::Admin::login(bool &p2){
     cout<<"Enter your password: ";
     cin>>m_password;
     l=m_name + " : " + m_password;
-    std::ifstream file("Admin.txt");
+    std::ifstream file("../Admin.txt");
     if(!file.is_open()){
         cout<<"Error"<<endl;
     }
@@ -93,7 +93,7 @@ void jl::Admin::addMovie(std::vector<Movie>movies){
     cout<<"Entry room: ";
     cin>>room;
     movies.emplace_back(title,author,film_genre,time,room);
-    std::ofstream file("Movies.txt",std::ios::app);
+    std::ofstream file("../Movies.txt",std::ios::app);
     if (!file.is_open()) {
         cout << "Error" <<endl;
         return;
@@ -112,7 +112,7 @@ void jl::Admin::addMovie(std::vector<Movie>movies){
 void jl::Admin::showMovies(){
     std::string line;
     int i=1;
-    std::ifstream file("Movies.txt");
+    std::ifstream file("../Movies.txt");
     if(!file.is_open()){
         cout<<"Error"<<endl;
         return;
@@ -137,7 +137,7 @@ void jl::Admin::deleteMovie(){
     int lineNumber;
     std::vector<std::string> lines;
     std::string line;
-    std::ifstream inputFile("Movies.txt");
+    std::ifstream inputFile("../Movies.txt");
     if (!inputFile.is_open()) {
         cout << "Error" << std::endl;
         return;
@@ -154,7 +154,7 @@ void jl::Admin::deleteMovie(){
     }
      lines.erase(lines.begin() + (lineNumber - 1));
 
-    std::ofstream outputFile("Movies.txt");
+    std::ofstream outputFile("../Movies.txt");
     if (!outputFile.is_open()) {
         cout<< "Error" << std::endl;
         return;
@@ -190,8 +190,8 @@ void jl::Admin::reset(std::vector<std::vector<int>>&matrix,std::string f){
 }
     
 void jl::Admin::showSeat(int c,std::vector<std::vector<int>>&matrix1,std::vector<std::vector<int>>&matrix2){
-    loadS(matrix1,"Places_1.txt");
-    loadS(matrix2,"Places_2.txt");
+    loadS(matrix1,"../Places_1.txt");
+    loadS(matrix2,"../Places_2.txt");
     
     if (c==1){
         cout<<"--Screen--"<<endl;
@@ -222,7 +222,7 @@ void jl::Admin::registration(){
     cout<<"Enter password: ";
     cin>>m_password;
     l=m_name+" : "+m_password;
-    std::ifstream file("Admin.txt");
+    std::ifstream file("../Admin.txt");
     if(!file.is_open()){
         cout<<"Error"<<endl;
     }
@@ -236,7 +236,7 @@ void jl::Admin::registration(){
     if(found){
         cout<<endl<<"It already exists "<<endl;
     }else{
-    std::ofstream file("Admin.txt",std::ios::app);
+    std::ofstream file("../Admin.txt",std::ios::app);
     if(!file.is_open()){
         cout<<"Error"<<endl;
     }else{
